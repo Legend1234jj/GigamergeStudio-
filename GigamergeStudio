@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gigamerge Studio - Powering the Creator Economy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --primary: #0B1221;
+            --accent: #6A5AE0;
+            --highlight: #00E0B8;
+            --gold: #C9A227;
+            --white: #ffffff;
+            --gray-100: #f3f4f6;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-700: #374151;
+            --gray-900: #111827;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            background: rgba(11, 18, 33, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(106, 90, 224, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--highlight);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-left: 0.3rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--highlight);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--accent);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: rgba(106, 90, 224, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .btn-highlight {
+            background: var(--highlight);
+            color: var(--primary);
+            border: none;
+            font-weight: 600;
+        }
+
+        .btn-highlight:hover {
+            background: rgba(0, 224, 184, 0.8);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 5rem;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray-300);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .trust-badges {
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        /* Features Section */
+        .features {
+            background: linear-gradient(to bottom, rgba(11, 18, 33, 0.8), rgba(11, 18, 33, 1));
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--gray-300);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid rgba(106, 90, 224, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(106, 90, 224, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--highlight);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--gray-300);
+        }
+
+        /* Ecosystem Section */
+        .ecosystem {
+            background: linear-gradient(to bottom, rgba(11, 18, 33, 1), rgba(11, 18, 33, 0.9));
+        }
+
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ecosystem-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(0, 224, 184, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .ecosystem-card:hover {
+            background: rgba(0, 224, 184, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .ecosystem-icon {
+            font-size: 2rem;
+            color: var(--highlight);
+            margin-bottom: 1rem;
+        }
+
+        /* Marketplace Preview */
+        .marketplace-preview {
+            background: linear-gradient(to bottom, rgba(11, 18, 33, 0.9), rgba(11, 18, 33, 0.8));
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--gray-300);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid rgba(106, 90, 224, 0.2);
+        }
+
+        .project-img {
+            height: 180px;
+            background: linear-gradient(45deg, var(--accent), var(--highlight));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-details {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray-500);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-contract {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--highlight);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Wallet Section */
+        .wallet-section {
+            background: linear-gradient(to right, rgba(106, 90, 224, 0.1), rgba(0, 224, 184, 0.1));
+            border-radius: 1rem;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .wallet-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .wallet-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .wallet-content p {
+            color: var(--gray-300);
+            margin-bottom: 2rem;
+        }
+
+        /* Community Section */
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .community-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(201, 162, 39, 0.2);
+        }
+
+        .community-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(6, 11, 20, 0.95);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(106, 90, 224, 0.2);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--highlight);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--highlight);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        /* Chatbot */
+        .chatbot {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+
+        .chatbot-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(106, 90, 224, 0.3);
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .chatbot-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            height: 450px;
+            background: rgba(11, 18, 33, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            border: 1px solid rgba(106, 90, 224, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chatbot-header {
+            padding: 1.2rem;
+            background: rgba(106, 90, 224, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-bottom: 1px solid rgba(106, 90, 224, 0.2);
+        }
+
+        .chatbot-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .chatbot-title {
+            font-weight: 600;
+        }
+
+        .chatbot-status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--highlight);
+            margin-left: auto;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 0.8rem 1.2rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .bot-message {
+            background: rgba(106, 90, 224, 0.1);
+            border-top-left-radius: 0;
+            align-self: flex-start;
+        }
+
+        .user-message {
+            background: rgba(0, 224, 184, 0.1);
+            border-top-right-radius: 0;
+            align-self: flex-end;
+        }
+
+        .chatbot-input {
+            padding: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            border-top: 1px solid rgba(106, 90, 224, 0.2);
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(106, 90, 224, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            outline: none;
+        }
+
+        .chatbot-input button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* Animation Utilities */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glassmorphism Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                Gigamerge<span>Studio</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#ecosystem">Ecosystem</a>
+                <a href="#marketplace">Marketplace</a>
+                <a href="#royalty">Royalty</a>
+                <a href="#coin">Coin</a>
+                <a href="#community">Community</a>
+                <a href="#about">About</a>
+            </div>
+            
+            <div class="nav-cta">
+                <a href="#signin" class="btn btn-outline">Sign In</a>
+                <a href="#signup" class="btn btn-primary">Join Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div id="particles-js"></div>
+        <div class="container hero-content">
+            <h1>Gigamerge Studio — <span class="highlight">Create. Automate. Earn.</span></h1>
+            <p>All-in-one hub for editors, coders & creators. AI tools, marketplace, royalties, and a wallet — in one ecosystem.</p>
+            <div class="hero-cta">
+                <a href="#signup" class="btn btn-highlight">Get Started</a>
+                <a href="#ecosystem" class="btn btn-outline">Explore Tools</a>
+                <a href="#signin" class="btn btn-outline">Sign In</a>
+            </div>
+            <div class="trust-badges">
+                <i class="fas fa-shield-alt"></i>
+                <span>Used by creators across India | Built for scale</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why <span class="highlight">Gigamerge</span>?</h2>
+                <p>We provide everything creators need to succeed in one powerful platform</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Create Faster</h3>
+                    <p>AI-powered automation for rough cuts, captions, and code snippets. Focus on creativity, not busywork.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Earn Smarter</h3>
+                    <p>Templates and plugins become recurring income streams. Get paid for your creativity long after the initial work.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3>Grow Bigger</h3>
+                    <p>Access analytics, trend data, and collaboration opportunities to take your creative business to the next level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Section -->
+    <section id="ecosystem" class="ecosystem">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Creator <span class="highlight">Operating System</span></h2>
+                <p>The complete suite of tools for modern creators</p>
+            </div>
+            
+            <div class="ecosystem-grid">
+                <div class="ecosystem-card fade-in">
+                    <div class="ecosystem-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>AI Video Assistant</h3>
+                    <p>Automated rough cuts, captions, music sync</p>
+                </div>
+                
+                <div class="ecosystem-card fade-in">
+                    <div class="ecosystem-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Code Automation</h3>
+                    <p>Smart snippets, boilerplates, deploy helper</p>
+                </div>
+                
+                <div class="ecosystem-card fade-in">
+                    <div class="ecosystem-icon">
+                        <i class="fas fa-photo-video"></i>
+                    </div>
+                    <h3>Asset Library</h3>
+                    <p>Royalty-free soundtracks, SFX, LUTs, animations</p>
+                </div>
+                
+                <div class="ecosystem-card fade-in">
+                    <div class="ecosystem-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Growth Tools</h3>
+                    <p>YT/IG analytics, trend tracker, content calendar</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#pricing" class="btn btn-highlight">Start Free • ₹399–₹999/mo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Preview -->
+    <section id="marketplace" class="marketplace-preview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Smart Project <span class="highlight">Marketplace</span></h2>
+                <p>Find work or hire the best creators with smart-contract secured payments</p>
+            </div>
+            
+            <div class="filters">
+                <button class="filter-btn active">Video Editing</button>
+                <button class="filter-btn">Coding</button>
+                <button class="filter-btn">Animation</button>
+                <button class="filter-btn">Templates</button>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-img">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">YouTube Intro Animation</h3>
+                        <div class="project-details">
+                            <span>Budget: ₹5,000</span>
+                            <span>3 Days</span>
+                        </div>
+                        <div class="project-contract">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Smart Contract: ON</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">Apply Now</button>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-img">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">React E-commerce Website</h3>
+                        <div class="project-details">
+                            <span>Budget: ₹15,000</span>
+                            <span>7 Days</span>
+                        </div>
+                        <div class="project-contract">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Smart Contract: ON</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">Apply Now</button>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-img">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Logo Animation Package</h3>
+                        <div class="project-details">
+                            <span>Budget: ₹8,000</span>
+                            <span>5 Days</span>
+                        </div>
+                        <div class="project-contract">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Smart Contract: ON</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#marketplace-full" class="btn btn-outline">Post a Project</a>
+                <a href="#become-creator" class="btn btn-outline">Become a Pro Creator</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wallet Section -->
+    <section id="coin" class="container">
+        <div class="wallet-section fade-in">
+            <div class="wallet-content">
+                <h2>Track all creator income in one <span class="highlight">wallet</span></h2>
+                <p>Gamified coins to unlock premium assets and features. Manage your earnings from multiple platforms in one secure place.</p>
+                <a href="#wallet" class="btn btn-highlight">Activate Wallet</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community">
+        <div class="container">
+            <div class="section-title">
+                <h2>Join Our <span class="highlight">Community</span></h2>
+                <p>Connect with other creators, participate in events, and grow together</p>
+            </div>
+            
+            <div class="community-grid">
+                <div class="community-card fade-in">
+                    <div class="community-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Hackathons</h3>
+                    <p>Regular coding challenges with cash prizes and recognition</p>
+                </div>
+                
+                <div class="community-card fade-in">
+                    <div class="community-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Edit Battles</h3>
+                    <p>Showcase your editing skills and compete against other creators</p>
+                </div>
+                
+                <div class="community-card fade-in">
+                    <div class="community-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Mentorship</h3>
+                    <p>Learn from industry experts and get personalized guidance</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#discord" class="btn btn-outline"><i class="fab fa-discord"></i> Join Discord</a>
+                <a href="#telegram" class="btn btn-outline"><i class="fab fa-telegram"></i> Join Telegram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Gigamerge Studio</h4>
+                    <p>Powering the Creator Economy with cutting-edge tools and platforms for modern creators.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="#ecosystem">Ecosystem</a></li>
+                        <li><a href="#marketplace">Marketplace</a></li>
+                        <li><a href="#royalty">Royalty System</a></li>
+                        <li><a href="#coin">Creator Wallet</a></li>
+                        <li><a href="#virtual-studio">Virtual Studio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#press">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#developers">Developers</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Gigamerge Studio. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a> | <a href="#refund">Refund Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot">
+        <button class="chatbot-btn">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="chatbot-title">GigaBot</div>
+                <div class="chatbot-status"></div>
+            </div>
+            <div class="chatbot-messages">
+                <div class="message bot-message">
+                    Hey! I'm GigaBot 🤖 — need help with editing, coding, or growth?
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" placeholder="Type your message...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#6A5AE0" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#6A5AE0",
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "grab" },
+                        onclick: { enable: true, mode: "push" },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+            
+            // Fade-in animation on scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+            
+            // Chatbot functionality
+            const chatbotBtn = document.querySelector('.chatbot-btn');
+            const chatbotWindow = document.querySelector('.chatbot-window');
+            const chatInput = document.querySelector('.chatbot-input input');
+            const chatSendBtn = document.querySelector('.chatbot-input button');
+            const chatMessages = document.querySelector('.chatbot-messages');
+            
+            chatbotBtn.addEventListener('click', () => {
+                chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+            });
+            
+            function addMessage(text, isUser = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+                messageDiv.textContent = text;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            function handleChatInput() {
+                const text = chatInput.value.trim();
+                if (text === '') return;
+                
+                addMessage(text, true);
+                chatInput.value = '';
+                
+                // Simulate bot response
+                setTimeout(() => {
+                    let response = "I can help with that! For detailed info on pricing, check our /pricing page. Would you like me to guide you somewhere specific?";
+                    
+                    if (text.toLowerCase().includes('price') || text.toLowerCase().includes('cost')) {
+                        response = "We have plans for every creator! Starter (Free), Creator (₹399/mo), and Pro (₹999/mo). Check out /pricing for a full breakdown.";
+                    } else if (text.toLowerCase().includes('project') || text.toLowerCase().includes('hire')) {
+                        response = "Great! To post a project and find talent, head to our /marketplace. I can help you draft a brief.";
+                    } else if (text.toLowerCase().includes('create') || text.toLowerCase().includes('join')) {
+                        response = "Awesome! To start earning, sign up on our /signup page. Build your portfolio to attract clients.";
+                    } else if (text.toLowerCase().includes('wallet') || text.toLowerCase().includes('coin')) {
+                        response = "Your wallet tracks all earnings! Coins unlock premium assets. Learn more at /coin.";
+                    }
+                    
+                    addMessage(response);
+                }, 1000);
+            }
+            
+            chatSendBtn.addEventListener('click', handleChatInput);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    handleChatInput();
+                }
+            });
+            
+            // Filter buttons functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    // Here you would normally filter the projects
+                });
+            });
+        });
+    </script>
+</body>
+</html>
